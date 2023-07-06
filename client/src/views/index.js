@@ -1,7 +1,7 @@
 import Clubs from './Clubs';
 import Players from './Players';
 
-export default {
+export {
     Clubs,
     Players
 }

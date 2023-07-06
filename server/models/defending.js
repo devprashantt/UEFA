@@ -9,11 +9,11 @@ const Defending = sequelize.define('defending', {
     player_name: DataTypes.STRING,
     club: DataTypes.STRING,
     position: DataTypes.STRING,
-    fouls_committed: DataTypes.INTEGER,
-    fouls_suffered: DataTypes.INTEGER,
-    red: DataTypes.INTEGER,
-    yellow: DataTypes.INTEGER,
-    minutes_played: DataTypes.INTEGER,
+    balls_recovered: DataTypes.INTEGER,
+    tackles: DataTypes.INTEGER,
+    t_won: DataTypes.INTEGER,
+    t_lost: DataTypes.INTEGER,
+    clearance_attempted: DataTypes.INTEGER,
     match_played: DataTypes.INTEGER,
 });
 

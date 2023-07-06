@@ -2,18 +2,14 @@ import { DataTypes } from 'sequelize';
 import sequelize from '../config/database.js';
 
 const Attempts = sequelize.define('attempts', {
-    serial: {
-        type: DataTypes.INTEGER,
-        allowNull: false,
-    },
+    serial: DataTypes.INTEGER,
     player_name: DataTypes.STRING,
     club: DataTypes.STRING,
     position: DataTypes.STRING,
-    balls_recovered: DataTypes.INTEGER,
-    tackles: DataTypes.INTEGER,
-    t_won: DataTypes.INTEGER,
-    t_lost: DataTypes.INTEGER,
-    clearance_attempted: DataTypes.INTEGER,
+    total_attempts: DataTypes.INTEGER,
+    on_target: DataTypes.INTEGER,
+    off_target: DataTypes.INTEGER,
+    blocked: DataTypes.INTEGER,
     match_played: DataTypes.INTEGER,
 });
 

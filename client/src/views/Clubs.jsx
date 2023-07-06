@@ -1,8 +1,21 @@
+import { ClubGoal, ClubHeatmap, ClubPosition } from "../components";
+
 const Clubs = () => {
   return (
-    <div>
-      <h2>Clubs Page</h2>
-      {/* Add specific content for the Clubs page */}
+    <div
+      style={{
+        display: "flex",
+        flexDirection: "column",
+      }}
+    >
+      {/* clubs goals stats */}
+      <ClubGoal />
+
+      {/* clubs position stats */}
+      <ClubPosition />
+
+      {/*clubs and players heatmap */}
+      <ClubHeatmap />
     </div>
   );
 };

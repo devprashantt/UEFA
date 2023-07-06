@@ -3,9 +3,8 @@ import { Routes, Route, useLocation } from "react-router-dom";
 
 import Layout from "./components/Layout";
 
-//import pages from "./pages
-import Players from "./views/Players";
-import Clubs from "./views/Clubs";
+//import pages from "./views
+import { Clubs, Players } from "./views";
 
 const App = () => {
   //check if route changes location
@@ -17,7 +16,7 @@ const App = () => {
   }, [location]);
 
   return (
-    <div>
+    <div className="app">
       <Layout>
         <Routes>
           <Route path="/players" element={<Players />} />

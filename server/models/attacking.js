@@ -8,10 +8,11 @@ const Attacking = sequelize.define('attacking', {
     player_name: DataTypes.STRING,
     club: DataTypes.STRING,
     position: DataTypes.STRING,
+    assists: DataTypes.INTEGER,
+    corner_taken: DataTypes.INTEGER,
+    offsides: DataTypes.INTEGER,
+    dribbles: DataTypes.INTEGER,
     total_attempts: DataTypes.INTEGER,
-    on_target: DataTypes.INTEGER,
-    off_target: DataTypes.INTEGER,
-    blocked: DataTypes.INTEGER,
     match_played: DataTypes.INTEGER,
 });
 
