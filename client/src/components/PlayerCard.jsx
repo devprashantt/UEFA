@@ -30,12 +30,9 @@ const PlayerGoal = ({ number }) => {
     fetchPlayerInfo();
   }, [number]);
 
-  if (!playerInfo) {
-    return <div>No player found for the given rank.</div>;
-  }
-
   return (
     <div
+      className="flex-col"
       style={{
         padding: "1rem",
         width: "100%",
@@ -45,10 +42,16 @@ const PlayerGoal = ({ number }) => {
         borderRadius: "0.4rem",
       }}
     >
-      <h2>Rank {number}</h2>
-      <p>{playerInfo.player_name}</p>
-      <p>{playerInfo.club}</p>
-      <p>{playerInfo.goals}</p>
+      <h4>Rank {number}</h4>
+      <h2
+        style={{
+          color: "purple",
+        }}
+      >
+        {playerInfo ? playerInfo.player_name : "Loading name..."}
+      </h2>
+      <h4>{playerInfo ? playerInfo.club : "Loading club..."}</h4>
+      <p>{playerInfo ? playerInfo.goals : "Loading goals..."}</p>
     </div>
   );
 };

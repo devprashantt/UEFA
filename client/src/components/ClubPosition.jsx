@@ -5,7 +5,6 @@ import {
   Bar,
   XAxis,
   YAxis,
-  CartesianGrid,
   Tooltip,
   ResponsiveContainer,
 } from "recharts";
@@ -71,14 +70,24 @@ const ClubPosition = () => {
   ];
 
   return (
-    <div style={{}}>
-      <div style={{ width: "100%", height: 400 }}>
-        <ResponsiveContainer>
-          <BarChart
-            data={clubStatistics}
-            margin={{ top: 20, right: 30, left: 20, bottom: 5 }}
-          >
-            <CartesianGrid strokeDasharray="3 3" />
+    <div
+      className="flex-col"
+      style={{
+        gap: "2rem",
+      }}
+    >
+      <div
+        style={{
+          padding: "1.2rem",
+          width: "100%",
+
+          boxShadow: "0 0 5px 0 rgba(0, 0, 0, 0.2)",
+
+          borderRadius: "0.4rem",
+        }}
+      >
+        <ResponsiveContainer height={400}>
+          <BarChart data={clubStatistics}>
             <XAxis dataKey="club" />
             <YAxis />
             <Tooltip />

@@ -6,8 +6,8 @@ import { getAllGoalkeeping } from "../services/goalkeepingApi";
 import { getAllGoals } from "../services/goalsApi";
 
 const ClubHeatmap = () => {
-  const [selectedType, setSelectedType] = useState("Defence");
-  const [selectedTeam, setSelectedTeam] = useState("Real Madrid");
+  const [selectedType, setSelectedType] = useState("Attack");
+  const [selectedTeam, setSelectedTeam] = useState("LOSC");
 
   const [teams, setTeams] = useState([]);
   const [players, setPlayers] = useState([]);
@@ -15,7 +15,7 @@ const ClubHeatmap = () => {
   const [defendingStats, setDefendingStats] = useState([]);
   const [attackingStats, setAttackingStats] = useState([]);
   const [goalkeepingStats, setGoalkeepingStats] = useState([]);
-  const [goalsData, setGoalsData] = useState([]);
+  const [goalsStats, setGoalsStats] = useState([]);
 
   useEffect(() => {
     fetchStats();
@@ -47,7 +47,7 @@ const ClubHeatmap = () => {
       setDefendingStats(defendingData);
       setAttackingStats(attackingData);
       setGoalkeepingStats(goalkeepingData);
-      setGoalsData(goalsData);
+      setGoalsStats(goalsData);
     } catch (error) {
       console.log("Error fetching stats:", error);
     }
@@ -120,7 +120,7 @@ const ClubHeatmap = () => {
 
         // Fill goals column with 0 if it is missing in the data
         if (key === "goals" && value === 0) {
-          const goalData = goalsData.find(
+          const goalData = goalsStats.find(
             (goal) => goal.player_name === stat.player_name
           );
           value = goalData ? goalData.goals : 0;
@@ -225,7 +225,6 @@ const ClubHeatmap = () => {
             value={selectedTeam}
             onChange={handleTeamChange}
           >
-            <option value="All">All</option>
             {teams.map((team, index) => (
               <option key={index} value={team}>
                 {team}
@@ -234,9 +233,33 @@ const ClubHeatmap = () => {
           </select>
         </div>
         <div className="flex-row">
-          <button onClick={() => toggleType("Defence")}>Defence</button>
-          <button onClick={() => toggleType("Attack")}>Attack</button>
-          <button onClick={() => toggleType("Goalkeeping")}>Goalkeeping</button>
+          <button
+            onClick={() => toggleType("Attack")}
+            style={{
+              color: selectedType === "Attack" ? "blue" : "black",
+              fontWeight: selectedType === "Attack" ? "bold" : "normal",
+            }}
+          >
+            Attack
+          </button>
+          <button
+            onClick={() => toggleType("Defence")}
+            style={{
+              color: selectedType === "Defence" ? "blue" : "black",
+              fontWeight: selectedType === "Defence" ? "bold" : "normal",
+            }}
+          >
+            Defence
+          </button>
+          <button
+            onClick={() => toggleType("Goalkeeping")}
+            style={{
+              color: selectedType === "Goalkeeping" ? "blue" : "black",
+              fontWeight: selectedType === "Goalkeeping" ? "bold" : "normal",
+            }}
+          >
+            Goalkeeping
+          </button>
         </div>
       </div>
       <div

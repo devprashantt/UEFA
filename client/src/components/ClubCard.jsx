@@ -3,6 +3,7 @@ import PropTypes from "prop-types";
 const ClubGoal = ({ title, club, goals }) => {
   return (
     <div
+      className="flex-col"
       style={{
         padding: "1rem",
         width: "100%",
@@ -12,9 +13,15 @@ const ClubGoal = ({ title, club, goals }) => {
         borderRadius: "0.4rem",
       }}
     >
-      <h2>{title}</h2>
-      <p>{club}</p>
-      <p>{goals}</p>
+      <h4>{title}</h4>
+      <h2
+        style={{
+          color: "purple",
+        }}
+      >
+        {club}
+      </h2>
+      <p>{goals} Goals</p>
     </div>
   );
 };

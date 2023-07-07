@@ -1,6 +1,5 @@
 import PropTypes from "prop-types";
-
-import Sidebar from "./Sidebar";
+import { Link } from "react-router-dom";
 
 const Layout = ({ children }) => {
   return (
@@ -12,31 +11,43 @@ const Layout = ({ children }) => {
       }}
     >
       <header
+        className="flex-row"
         style={{
-          backgroundColor: "#f2f2f2",
-          padding: "20px",
+          boxShadow: "0 0 5px 0 rgba(0, 0, 0, 0.2)",
+
+          padding: "0.8rem 1.6rem",
+          justifyContent: "space-between",
         }}
       >
         <h1>UEFA Champions League</h1>
-      </header>
-      <div
-        style={{
-          display: "flex",
-          height: "100%",
-          width: "100%",
+        <div className="flex-row">
+          <Link
+            to="/players"
+            style={{
+              color: location.pathname === "/players" ? "black" : "gray",
+            }}
+          >
+            Player
+          </Link>
 
-          gap: "20px",
+          <Link
+            to="/clubs"
+            style={{
+              color: location.pathname === "/clubs" ? "black" : "gray",
+            }}
+          >
+            Clubs
+          </Link>
+        </div>
+      </header>
+      <main
+        style={{
+          flex: 1,
+          padding: "1.6rem",
         }}
       >
-        <Sidebar />
-        <main
-          style={{
-            flex: 1,
-          }}
-        >
-          {children}
-        </main>
-      </div>
+        {children}
+      </main>
     </div>
   );
 };

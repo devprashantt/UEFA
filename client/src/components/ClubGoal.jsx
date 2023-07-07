@@ -5,7 +5,6 @@ import {
   Bar,
   XAxis,
   YAxis,
-  CartesianGrid,
   Tooltip,
   ResponsiveContainer,
 } from "recharts";
@@ -105,7 +104,12 @@ const ClubGoal = () => {
     topScorer: `${clubStat.topScorer.playerName} (${clubStat.topScorer.goals} goals)`,
   }));
   return (
-    <div>
+    <div
+      className="flex-col"
+      style={{
+        gap: "2rem",
+      }}
+    >
       {/* top clubs and lowest club card */}
       <div
         className="flex-row"
@@ -132,10 +136,18 @@ const ClubGoal = () => {
       </div>
 
       {/* clubs graph */}
-      <div style={{ height: "20rem", display: "flex", marginTop: "2rem" }}>
-        <ResponsiveContainer>
+      <div
+        style={{
+          padding: "1.6rem",
+          width: "100%",
+
+          boxShadow: "0 0 5px 0 rgba(0, 0, 0, 0.2)",
+
+          borderRadius: "0.4rem",
+        }}
+      >
+        <ResponsiveContainer height={400}>
           <BarChart data={clubStatistics}>
-            <CartesianGrid strokeDasharray="3 3" />
             <XAxis dataKey="club" />
             <YAxis />
             <Tooltip />

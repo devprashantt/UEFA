@@ -6,6 +6,7 @@ const Clubs = () => {
       style={{
         display: "flex",
         flexDirection: "column",
+        gap: "2rem",
       }}
     >
       {/* clubs goals stats */}
