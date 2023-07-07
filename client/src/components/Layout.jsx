@@ -24,7 +24,10 @@ const Layout = ({ children }) => {
           <Link
             to="/players"
             style={{
-              color: location.pathname === "/players" ? "black" : "gray",
+              color:
+                location.pathname === "/players" || location.pathname === "/"
+                  ? "black"
+                  : "gray",
             }}
           >
             Player
