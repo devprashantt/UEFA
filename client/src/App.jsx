@@ -19,6 +19,7 @@ const App = () => {
     <div className="app">
       <Layout>
         <Routes>
+          <Route path="/" element={<Players />} />
           <Route path="/players" element={<Players />} />
           <Route path="/clubs" element={<Clubs />} />
         </Routes>
