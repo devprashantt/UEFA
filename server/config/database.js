@@ -1,8 +1,11 @@
 import { Sequelize } from 'sequelize';
+import dotenv from 'dotenv';
 
-const sequelize = new Sequelize('football', 'AVGJTnxUUEhME3e.root', '08aKjXy3sH60Nc9j', {
-    host: 'gateway01.eu-central-1.prod.aws.tidbcloud.com',
-    port: 4000,
+dotenv.config();
+
+const sequelize = new Sequelize(process.env.DB_NAME, process.env.DB_USERNAME, process.env.DB_PASSWORD, {
+    host: process.env.DB_HOST,
+    port: process.env.DB_PORT,
     dialect: 'mysql',
     dialectOptions: {
         ssl: {
