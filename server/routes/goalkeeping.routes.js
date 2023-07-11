@@ -5,7 +5,7 @@ import {
     createGoalKeepingStat,
     updateGoalKeepingStat,
     deleteGoalKeepingStat,
-} from '../controllers/goalKeeping.js';
+} from '../controllers/goalkeeping.js';
 
 const router = express.Router();
 
