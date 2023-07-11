@@ -1,4 +1,4 @@
-import Attacking from '../models/Attacking.js';
+import Attacking from '../models/attacking.js';
 
 export const getAttackingStats = async (req, res) => {
     try {
