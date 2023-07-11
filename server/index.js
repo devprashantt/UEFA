@@ -7,7 +7,7 @@ import attemptsRoutes from './routes/attempts.routes.js';
 import defendingRoutes from './routes/defending.routes.js';
 import disciplineRoutes from './routes/disciplinary.routes.js';
 import distributionRoutes from './routes/distribution.routes.js';
-import goalKeepingRoutes from './routes/goalKeeping.routes.js';
+import goalKeepingRoutes from './routes/goalkeeping.routes.js';
 import goalsRoutes from './routes/goals.routes.js';
 import keyStatsRoutes from './routes/keystats.routes.js';
 
