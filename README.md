@@ -2,6 +2,8 @@
 
 This project is a web application for analyzing and visualizing UEFA Champions League data. It provides a dashboard to query and visualize various statistics related to players, clubs, goals, and more.
 
+![UEFA](https://ik.imagekit.io/officialprashant/UEFA_Mko4a1cT_.png?updatedAt=1689251328803)
+
 ## Dataset
 
 The dataset used for this project can be found at the following link: [UEFA Champions League Dataset](https://www.kaggle.com/datasets/azminetoushikwasi/ucl-202122-uefa-champions-league)
